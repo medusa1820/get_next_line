@@ -6,7 +6,7 @@
 /*   By: musenov <musenov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:54:58 by musenov           #+#    #+#             */
-/*   Updated: 2023/02/15 21:47:01 by musenov          ###   ########.fr       */
+/*   Updated: 2023/02/17 15:26:07 by musenov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,17 +78,16 @@ char	*ft_strdup(char *s1)
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
-// char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*s3;
 	size_t	i_s12;
 	size_t	i_s3;
 
 	if (!s1 || !s2)
-		return (NULL);
+		return (free ((char *)s1), NULL);
 	s3 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s3)
-		return (NULL);
+		return (free ((char *)s1), NULL);
 	i_s3 = 0;
 	i_s12 = 0;
 	while (*(s1 + i_s12) != '\0')
@@ -101,7 +100,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		*(s3 + i_s3++) = *(s2 + i_s12++);
 	}
 	*(s3 + i_s3) = '\0';
-	// free(s1);
+	free ((char *)s1);
 	return (s3);
 }
 

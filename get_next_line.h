@@ -6,7 +6,7 @@
 /*   By: musenov <musenov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:48:54 by musenov           #+#    #+#             */
-/*   Updated: 2023/02/15 22:03:06 by musenov          ###   ########.fr       */
+/*   Updated: 2023/02/17 14:53:07 by musenov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ char	*ft_strjoin(char const *s1, char const *s2);
 // size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 // char	*ft_strjoin(char *s1, char const *s2);
-char	*check_remainder(char **remainder, char **line);
+
+// char	*check_remainder(char **remainder, char **line);
+char	*getstr_remainder(char **remainder, char **line, char **p_n);
+
 // char	*check_nl(char **remainder, char **line, char **p_n);
 char	*get_next_line(int fd);
 
