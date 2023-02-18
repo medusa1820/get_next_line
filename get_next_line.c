@@ -1,20 +1,19 @@
 #include "get_next_line.h"
 
-char	*check_remainder(char **remainder, char **line)
+char	*check_remainder(char **remainder, char **line, char **p_n)
 {
-	char	*p_n;
 	char	*tmp;
 
-	p_n = NULL;
+	*p_n = NULL;
 	if (*remainder)
 	{
-		p_n = ft_strchr(*remainder, '\n');
-		if (p_n)
+		*p_n = ft_strchr(*remainder, '\n');
+		if (*p_n)
 		{
-			tmp = ft_strdup(++p_n);
+			tmp = ft_strdup(++*p_n);
 			if (!tmp)
 				return (free(*remainder), *remainder = NULL, *line = NULL, NULL);
-			*p_n = '\0';
+			**p_n = '\0';
 			*line = ft_strdup(*remainder);
 			if (!*line)
 				return (free(tmp), tmp = NULL, free(*remainder), *remainder = NULL, NULL);
@@ -36,7 +35,7 @@ char	*check_remainder(char **remainder, char **line)
 		if (!*line)
 			return (NULL);
 	}
-	return (p_n);
+	return (*p_n);
 }
 
 int	read_to_buf(char **remainder, char **line, char **p_n, int *fd)
@@ -74,8 +73,7 @@ char	*get_next_line(int fd)
 	char			*line;
 	int				bwr;
 
-	p_n = check_remainder(&remainder, &line);
-	if (!line)
+	if (!(check_remainder(&remainder, &line, &p_n)) && !line)
 		return (NULL);
 	while (!p_n)
 	{

@@ -6,7 +6,7 @@
 /*   By: musenov <musenov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:48:54 by musenov           #+#    #+#             */
-/*   Updated: 2023/02/17 21:36:40 by musenov          ###   ########.fr       */
+/*   Updated: 2023/02/18 03:00:23 by musenov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 
 // char	*ft_strjoin(char *s1, char const *s2);
 
-char	*check_remainder(char **remainder, char **line);
+char	*check_remainder(char **remainder, char **line, char **p_n);
 // char	*getstr_remainder(char **remainder, char **line, char **p_n);
 
 // char	*check_nl(char **remainder, char **line, char **p_n);
