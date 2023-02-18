@@ -86,11 +86,8 @@ char	*get_next_line(int fd)
 			return (line);
 		if (bwr > 0)
 		{
-			if (p_n)
-			{
-				if (!remainder)
-					return (free(line), free(remainder), remainder = NULL, NULL);
-			}
+			if (p_n && !remainder)
+				return (free(line), free(remainder), remainder = NULL, NULL);
 			if (!line)
 				return (free(remainder), remainder = NULL, NULL);
 		}
